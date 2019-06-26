@@ -64,7 +64,7 @@ public class TestUniquelyNamedPersons {
     @Test
     public void testGetUniquelyNamedPeopleStartingWith() {
         // when
-        Character startingCharacter = 'a';
+        Character startingCharacter = 'A';
 
         List<String> actual = warehouse
                 .getUniquelyNamedPeopleStartingWith(startingCharacter)
@@ -73,6 +73,7 @@ public class TestUniquelyNamedPersons {
 
         // Then
         actual.forEach(name -> Assert.assertTrue(name.startsWith(startingCharacter.toString())));
+        Assert.assertTrue(actual.size() > 0);
     }
 
 
